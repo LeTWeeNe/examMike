@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactMail;
+// use App\Mail\ContactMail;
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\ContactMail;
@@ -13,7 +13,7 @@ class ContactController extends controller
 {
     public function index()
     {
-        return view('pages.contacts');
+        return view('pages.contact');
     }
 
     // {
@@ -63,7 +63,7 @@ class ContactController extends controller
                 'message' => 'required',
                 'tel' => 'required',
                 'subject' => 'required',
-                'g-recaptcha-response' => 'required|recaptchav3:contact,0.5'
+                // 'g-recaptcha-response' => 'required|recaptchav3:contact,0.5'
             ]);
 
             if ($validator->fails()) {
